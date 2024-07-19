@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "custom-crafting",
+	"version": "${version}",
+	"name": "custom-crafting",
+	"description": "a custom mod for fabric to add crafting recipes without craft tweaker",
+	"authors": [
+		"tinteeam"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/custom-crafting/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.tinteeam.custom_crafting.Customcrafting"
+		],
+		"client": [
+			"com.tinteeam.custom_crafting.CustomcraftingClient"
+		],
+		"fabric-datagen": [
+			"com.tinteeam.custom_crafting.CustomcraftingDataGenerator"
+		]
+	},
+	"mixins": [
+		"custom-crafting.mixins.json",
+		{
+			"config": "custom-crafting.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.19.2",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
